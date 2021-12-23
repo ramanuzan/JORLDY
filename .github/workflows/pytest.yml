@@ -71,4 +71,4 @@ jobs:
         cd jorldy
         pytest
       env:
-          LD_LIBRARY_PATH: ${{env.LD_LIBRARY_PATH}}:${{HOME}}/.mujoco/mujoco210/bin
+          LD_LIBRARY_PATH: ${{env.LD_LIBRARY_PATH}}:/.mujoco/mujoco210/bin
