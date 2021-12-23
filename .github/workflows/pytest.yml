@@ -41,10 +41,6 @@ jobs:
           sudo cp -r ~/.mujoco/mujoco210/bin/* /usr/lib/
 
           pip install 'mujoco-py<2.2,>=2.1'
-          
-          echo $LD_LIBRARY_PATH
-      env:
-          LD_LIBRARY_PATH: ${{env.LD_LIBRARY_PATH}}:~/.mujoco/mujoco210/bin
     - name: Install macos dependencies
       if: runner.os == 'macOS'
       run: |
@@ -74,3 +70,5 @@ jobs:
       run: |
         cd jorldy
         pytest
+      env:
+          LD_LIBRARY_PATH: ${{env.LD_LIBRARY_PATH}}:~/.mujoco/mujoco210/bin
