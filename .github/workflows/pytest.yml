@@ -36,10 +36,8 @@ jobs:
           mkdir ~/.mujoco
           mv mujoco210-linux-x86_64.tar.gz ~/.mujoco/
           tar -xvzf ~/.mujoco/mujoco210-linux-x86_64.tar.gz -C ~/.mujoco/
-          
           sudo apt-get -y install libosmesa6-dev libglfw3 libgl1-mesa-dev
           sudo cp -r ~/.mujoco/mujoco210/bin/* /usr/lib/
-
           pip install 'mujoco-py<2.2,>=2.1'
 
     - name: Install macos dependencies
@@ -50,7 +48,8 @@ jobs:
           mv mujoco210-macos-x86_64.tar.gz ~/.mujoco/
           tar -xvzf ~/.mujoco/mujoco210-macos-x86_64.tar.gz -C ~/.mujoco/
           brew install gcc@9
-          LD_LIBRARY_PATH=$HOME/.mujoco/mujoco210/bin pip install mujoco-py
+          brew install libosmesa6-dev libgl1-mesa-glx libglfw3
+          pip install 'mujoco-py<2.2,>=2.1'
 
     - name: Install windows dependencies
       if: runner.os == 'Windows'
