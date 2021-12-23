@@ -67,7 +67,11 @@ jobs:
 
     - name: Test with pytest
       run: |
+        echo $HOME
+        echo ~
+        echo ${{ env.HOMM }}
         cd jorldy
         pytest
       env:
         LD_LIBRARY_PATH: ${{ env.LD_LIBRARY_PATH }}:$HOME/.mujoco/mujoco210/bin
+        HOMM: ${{env.HOME}}
