@@ -41,6 +41,8 @@ jobs:
           sudo cp -r ~/.mujoco/mujoco210/bin/* /usr/lib/
 
           pip install 'mujoco-py<2.2,>=2.1'
+          
+          echo $HOME
     - name: Install macos dependencies
       if: runner.os == 'macOS'
       run: |
